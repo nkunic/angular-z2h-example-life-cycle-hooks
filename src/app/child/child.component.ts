@@ -7,6 +7,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class ChildComponent implements OnInit, OnDestroy {
   counter = 0;
+  interval: any;
 
   constructor() {
     console.log('Child Constructor is called');
@@ -14,14 +15,15 @@ export class ChildComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     console.log('Child OnInit is called');
-  }
 
-  ngOnDestroy() {
-    console.log('Child OnDestroy is called');
-
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.counter = this.counter + 1;
       console.log(this.counter);
     }, 1000);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.interval);
+    console.log('Child OnDestroy is called');
   }
 }
