@@ -1,2 +1,5 @@
 <h4>Parent component</h4>
-<app-child></app-child>
+<button type="button" (click)="toggleChild()" class="btn btn-primary">
+  Toggle child
+</button>
+<app-child *ngIf="isChild"></app-child>
