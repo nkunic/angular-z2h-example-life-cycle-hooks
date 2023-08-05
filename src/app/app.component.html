@@ -53,7 +53,20 @@
           implemented already.
         </li>
         <li>Mostly, we use ngOnInit for doing initializations.</li>
-        <li></li>
+        <li>
+          If we add a button in parent component and display the child component
+          when the button is clicked. So now, we can see only the parent
+          constructor is called and then the parent oninit is called. Child
+          component hooks are not called because child component is not yet
+          initialized. Now, when I click the button, we can see the child
+          constructor is called and child oninit method is also called. So, we
+          can understand once the component is loaded into the dom, that
+          component's constructor and the oninit method will be called.
+        </li>
+      </ul>
+
+      <h3>ngOnOnit</h3>
+      <ul>
         <li></li>
         <li></li>
       </ul>
