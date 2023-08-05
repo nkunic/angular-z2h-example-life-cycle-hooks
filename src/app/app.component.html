@@ -4,16 +4,55 @@
       <h1>ANGULAR Life Cycle Hooks</h1>
 
       <ul>
+        <li>
+          All components and directives in Angular have a lifecycle as Angular
+          creates, updates and destroys them.
+        </li>
+        <li>
+          We can implement the lifecycle hook interfaces and use the respective
+          method to tap into any lifecycle moments.
+        </li>
+        <li>Components have more lifecycle hooks than directives.</li>
+        <li>
+          These are the common lifecycle hooks available in both components and
+          directives:
+          <ul>
+            <li><strong>ngOnInit</strong></li>
+            <li><strong>ngOnChanges</strong></li>
+            <li><strong>ngDoCheck</strong></li>
+            <li><strong>ngOnDestroy</strong></li>
+          </ul>
+        </li>
+        <li>
+          and these are the lifecycle hooks available only in components to be
+          more specific we can say in children components.
+          <ul>
+            <li><strong>ngAfterContentInit</strong></li>
+            <li><strong>ngAfterContentChecked</strong></li>
+            <li><strong>ngAfterViewInit</strong></li>
+            <li><strong>ngAfterViewChecked</strong></li>
+          </ul>
+        </li>
+        <li>
+          As a side note, <strong>constructor</strong> is not a life cycle hook.
+          It is a typescript feature.
+        </li>
+      </ul>
+
+      <h2>Example:</h2>
+
+      <app-parent></app-parent>
+
+      <h3>ngOnOnit</h3>
+      <ul>
+        <li>will be invoked when the component has initialized.</li>
+        <li>this hook will be called only once after the first ngOnChanges.</li>
+        <li></li>
+        <li></li>
+        <li></li>
         <li></li>
         <li></li>
       </ul>
-
-      <h2></h2>
-      <h3></h3>
-      
-
-
-
     </div>
   </div>
 </div>
