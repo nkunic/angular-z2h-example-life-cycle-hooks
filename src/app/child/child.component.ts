@@ -1,4 +1,5 @@
 import {
+  AfterContentChecked,
   AfterContentInit,
   Component,
   ContentChild,
@@ -16,7 +17,13 @@ import {
   styleUrls: ['./child.component.css'],
 })
 export class ChildComponent
-  implements OnInit, OnDestroy, OnChanges, DoCheck, AfterContentInit
+  implements
+    OnInit,
+    OnDestroy,
+    OnChanges,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked
 {
   //counter = 0;
   //interval: any;
@@ -59,5 +66,9 @@ export class ChildComponent
   ngAfterContentInit() {
     console.log('in After Content Init');
     console.log('AfterContentInit - ' + this.projectedContent);
+  }
+
+  ngAfterContentChecked() {
+    console.log('in After Content Checked');
   }
 }
