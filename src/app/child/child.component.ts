@@ -11,6 +11,7 @@ import {
   OnDestroy,
   OnInit,
   SimpleChanges,
+  ViewChild,
 } from '@angular/core';
 
 @Component({
@@ -34,7 +35,8 @@ export class ChildComponent
   //channelName = '';
   @Input() channelName = '';
 
-  @ContentChild('projectedContent') projectedContent: any;
+  @ContentChild('projectedContent', { static: true }) projectedContent: any;
+  @ViewChild('childContent', { static: true }) childContent: any;
 
   constructor() {
     console.log('Child Constructor is called');
@@ -49,6 +51,7 @@ export class ChildComponent
     //}, 1000);
 
     console.log('OnInit - ' + this.projectedContent);
+    console.log('OnInit - ' + this.childContent);
   }
 
   ngOnDestroy() {
@@ -60,27 +63,33 @@ export class ChildComponent
     console.log(changes);
     console.log('Child OnChanges is called');
     console.log('OnChanges - ' + this.projectedContent);
+    console.log('OnChanges - ' + this.childContent);
   }
 
   ngDoCheck() {
-    console.log('Parent DoCheck is called');
+    console.log('Child DoCheck is called');
     console.log('DoCheck - ' + this.projectedContent);
+    console.log('DoCheck - ' + this.childContent);
   }
 
   ngAfterContentInit() {
     console.log('in After Content Init');
-    console.log('AfterContentInit - ' + this.projectedContent);
+    console.log('After Content Init - ' + this.projectedContent);
+    console.log('After Content Init - ' + this.childContent);
   }
 
   ngAfterContentChecked() {
     console.log('in After Content Checked');
+    console.log('After Content Checked - ' + this.childContent);
   }
 
   ngAfterViewInit() {
     console.log('in After View Init');
+    console.log('After View Init - ' + this.childContent);
   }
 
   ngAfterViewChecked() {
     console.log('in After View Checked');
+    console.log('After View Checked - ' + this.childContent);
   }
 }

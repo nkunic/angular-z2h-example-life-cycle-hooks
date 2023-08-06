@@ -178,8 +178,20 @@
       <ul>
         <li>will be called once after the first ngAfterContentChecked and ngAfterViewChecked
         </li>
-        <li></li>
-        <li></li>
+        <li>Like how we can access the parent content only after content is initialized, we can access the child content also only after the view is initialized.
+          That means only AfterViewInit.
+          This is how, Angular was working in older versions.
+          </li>
+        <li>
+          But, in Angular 9 a second parameter was introduced.
+          That is static. for that we can give true or false.
+          Same thing applicable to ContentChild as well.
+          So, when we add static as false.
+          we can see there is no differnce because that is the default option.
+          But, when we change it to true, we can see we can access both parent and child content
+          in ngOnchanges and ngOnInit itself.
+          So, this is the use of the second parameter in ViewChild and ContentChild.
+        </li>
         <li></li>
         <li></li>
         <li></li>
