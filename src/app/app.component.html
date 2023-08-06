@@ -48,8 +48,13 @@
 
       <h3>ngOnOnit</h3>
       <ul>
-        <li>will be invoked when the component has initialized.</li>
-        <li>this hook will be called only once after the first ngOnChanges.</li>
+        <li>
+          will be invoked <strong>when the component has initialized.</strong>
+        </li>
+        <li>
+          this hook will be called
+          <strong>only once after the first ngOnChanges.</strong>
+        </li>
         <li>
           We can implement the OnInit interface to use this hook. When we create
           a component using Angular CLI, we can see the ngOnInit hook has been
@@ -71,9 +76,10 @@
       <h3>ngOnDestroy</h3>
       <ul>
         <li>
-          OnDestroy will be called once just before the component is removed
-          from the DOM, in other words when the component is destroyed from the
-          DOM. So, if we need any cleaning activities we can do it in OnDestroy.
+          OnDestroy will be called
+          <strong>once just before the component is removed from the DOM</strong
+          >, in other words when the component is destroyed from the DOM. So, if
+          we need any cleaning activities we can do it in OnDestroy.
         </li>
         <li>
           We can use onDestroy to clear these setInterval intervals, we can
@@ -83,7 +89,15 @@
 
       <h3>ngOnChanges</h3>
       <ul>
-        <li></li>
+        <li>
+          OnChanges will be called
+          <strong
+            >once before OnInit and will be called whenever the data-bound input
+            properties changes</strong
+          >. When I say data-bound input, it is not the normal input in the same
+          component. It should be something coming outside of that component
+          through @Input.
+        </li>
         <li></li>
         <li></li>
         <li></li>
