@@ -76,7 +76,7 @@ export class ChildComponent
     console.log('in After Content Checked');
   }
 
-  ngAngAfterViewInitfterContentChecked() {
+  ngAfterViewInit() {
     console.log('in After View Init');
   }
 
