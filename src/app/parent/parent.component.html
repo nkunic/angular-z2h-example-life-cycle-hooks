@@ -10,8 +10,6 @@
   placeholder="Enter text"
   [(ngModel)]="channelName"
 />
-<app-child
-  [class]="'d-flex mt-3'"
-  *ngIf="isChild"
-  [channelName]="channelName"
-></app-child>
+<app-child [class]="'d-block mt-3'" *ngIf="isChild" [channelName]="channelName">
+  <p #projectedContent>Please subscribe to WebTechTalk</p>
+</app-child>
