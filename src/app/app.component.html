@@ -98,8 +98,18 @@
           component. It should be something coming outside of that component
           through @Input.
         </li>
-        <li></li>
-        <li></li>
+        <li>ngOnchanges is not called before OnInit.
+          Even, if I change this input value, we can see the value is getting changed but still
+          the ngOnchanges is not called.</li>
+        <li>
+          If we move this input from child to parent component and pass this to child component through @Input.
+          Now, when we load the page, we can see parent constructor is called and then parent oninit
+          is called after that child constructor is called and before child oninit we can see
+          child onchanges is called once.
+          When I change this input value in parent, the onchanges in child is called for every keystroke.
+          So, it is not a good practice to do any expensive operations like API call inside onChanges.
+          Also, ngOnChanges accepts a SimpleChanges object and using that we can make use of previous and current values.
+        </li>
         <li></li>
         <li></li>
         <li></li>
