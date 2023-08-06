@@ -1,6 +1,8 @@
 import {
   AfterContentChecked,
   AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit,
   Component,
   ContentChild,
   DoCheck,
@@ -23,7 +25,9 @@ export class ChildComponent
     OnChanges,
     DoCheck,
     AfterContentInit,
-    AfterContentChecked
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked
 {
   //counter = 0;
   //interval: any;
@@ -70,5 +74,13 @@ export class ChildComponent
 
   ngAfterContentChecked() {
     console.log('in After Content Checked');
+  }
+
+  ngAngAfterViewInitfterContentChecked() {
+    console.log('in After View Init');
+  }
+
+  ngAfterViewChecked() {
+    console.log('in After View Checked');
   }
 }

@@ -14,8 +14,8 @@
         </li>
         <li>Components have more lifecycle hooks than directives.</li>
         <li>
-          These are the common lifecycle hooks <strong>available in both components and
-          directives</strong>:
+          These are the common lifecycle hooks
+          <strong>available in both components and directives</strong>:
           <ul>
             <li><strong>ngOnInit</strong></li>
             <li><strong>ngOnDestroy</strong></li>
@@ -24,7 +24,9 @@
           </ul>
         </li>
         <li>
-          and these are the lifecycle hooks <strong>available only in components</strong> to be more specific we can say in children components.
+          and these are the lifecycle hooks
+          <strong>available only in components</strong> to be more specific we
+          can say in children components.
           <ul>
             <li><strong>ngAfterContentInit</strong></li>
             <li><strong>ngAfterContentChecked</strong></li>
@@ -120,25 +122,41 @@
 
       <h3>ngDoCheck</h3>
       <ul>
-        <li>docheck will be invoked when the change detector of the given component is invoked.
-          It is called <strong>immediately after ngOnChanges() on every change detection run, and immediately
-          after ngOnInit() on the first run.</strong></li>
-        <li>In development mode change detection run twice and so we can see Docheck is called one more time in each component.
+        <li>
+          docheck will be invoked when the change detector of the given
+          component is invoked. It is called
+          <strong
+            >immediately after ngOnChanges() on every change detection run, and
+            immediately after ngOnInit() on the first run.</strong
+          >
         </li>
-        <li>We should avoid triggering any expensive operations inside ngDoCheck. 
+        <li>
+          In development mode change detection run twice and so we can see
+          Docheck is called one more time in each component.
         </li>
-        <li>Also, we should avoid using ngOnChanges and ngDoCheck in the same component. Sometimes, the change detection triggers another change and it became an infinite loop.</li>
+        <li>
+          We should avoid triggering any expensive operations inside ngDoCheck.
+        </li>
+        <li>
+          Also, we should avoid using ngOnChanges and ngDoCheck in the same
+          component. Sometimes, the change detection triggers another change and
+          it became an infinite loop.
+        </li>
         <li></li>
       </ul>
 
       <h3>ngAfterContentInit</h3>
       <ul>
-        <li>ngAfterContentInit will be called <strong>only once after the first docheck</strong>.
+        <li>
+          ngAfterContentInit will be called
+          <strong>only once after the first docheck</strong>.
         </li>
-        <li>If we load the page, we can see AfterContentInit is called after Child docheck and also, we
-          cannot access this variable till the content is initialized.
-          That means, in all other hooks this is coming as undefined and only in AfterContentInit
-          this is not undefined.</li>
+        <li>
+          If we load the page, we can see AfterContentInit is called after Child
+          docheck and also, we cannot access this variable till the content is
+          initialized. That means, in all other hooks this is coming as
+          undefined and only in AfterContentInit this is not undefined.
+        </li>
         <li></li>
         <li></li>
         <li></li>
@@ -147,22 +165,29 @@
 
       <h3>ngAfterContentChecked</h3>
       <ul>
-        <li>ngAfterContentChecked will be called after ngAfterContentInit() and every subsequent ngDoCheck().</li>
-        <li>And, if I type something, we can see it is called after every doCheck.
+        <li>
+          ngAfterContentChecked will be called after ngAfterContentInit() and
+          every subsequent ngDoCheck().
+        </li>
+        <li>
+          And, if I type something, we can see it is called after every doCheck.
         </li>
       </ul>
+
       <h3>ngAfterViewInit</h3>
       <ul>
-        <li></li>
+        <li>will be called once after the first ngAfterContentChecked and ngAfterViewChecked
+        </li>
         <li></li>
         <li></li>
         <li></li>
         <li></li>
         <li></li>
       </ul>
+
       <h3>ngAfterViewChecked</h3>
       <ul>
-        <li></li>
+        <li>will be called after ngAfterViewInit and after every subsequent ngAfterContentChecked.</li>
         <li></li>
         <li></li>
         <li></li>
