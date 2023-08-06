@@ -2,6 +2,7 @@
 <button type="button" (click)="toggleChild()" class="btn btn-primary">
   Toggle child
 </button>
+
 <input
   type="text"
   class="form-control mt-2"
@@ -10,6 +11,7 @@
   placeholder="Enter text"
   [(ngModel)]="channelName"
 />
+
 <app-child [class]="'d-block mt-3'" *ngIf="isChild" [channelName]="channelName">
   <p #projectedContent>Please subscribe to WebTechTalk</p>
 </app-child>

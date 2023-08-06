@@ -15,7 +15,7 @@ export class ParentComponent implements OnInit, OnChanges, DoCheck {
   }
 
   ngOnInit() {
-    console.log('Parent OnInit is called');
+    console.log('Parent OnInit - component is initialized');
   }
 
   ngOnChanges() {

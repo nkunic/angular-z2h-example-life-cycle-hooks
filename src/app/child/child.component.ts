@@ -28,6 +28,8 @@ export class ChildComponent
     AfterContentInit,
     AfterContentChecked,
     AfterViewInit,
+    AfterViewChecked,
+    AfterViewInit,
     AfterViewChecked
 {
   //counter = 0;
@@ -43,7 +45,7 @@ export class ChildComponent
   }
 
   ngOnInit() {
-    console.log('Child OnInit is called');
+    console.log('Child OnInit - component is initialized');
 
     //this.interval = setInterval(() => {
     //  this.counter = this.counter + 1;
@@ -56,7 +58,7 @@ export class ChildComponent
 
   ngOnDestroy() {
     //clearInterval(this.interval);
-    console.log('Child OnDestroy is called');
+    console.log('Child OnDestroy - component is destroyed');
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -84,12 +86,11 @@ export class ChildComponent
   }
 
   ngAfterViewInit() {
-    console.log('in After View Init');
+    console.log('Child After View Init');
     console.log('After View Init - ' + this.childContent);
   }
 
   ngAfterViewChecked() {
-    console.log('in After View Checked');
-    console.log('After View Checked - ' + this.childContent);
+    console.log('Child After View checked');
   }
 }
