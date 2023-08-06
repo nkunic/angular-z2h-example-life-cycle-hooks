@@ -124,6 +124,11 @@
         <li>docheck will be invoked when the change detector of the given component is invoked.
           It is called <strong>immediately after ngOnChanges() on every change detection run, and immediately
           after ngOnInit() on the first run.</strong></li>
+        <li>In development mode change detection run twice and so we can see Docheck is called one more time in each component.
+        </li>
+        <li>We should avoid triggering any expensive operations inside ngDoCheck. 
+        </li>
+        <li>Also, we should avoid using ngOnChanges and ngDoCheck in the same component. Sometimes, the change detection triggers another change and it became an infinite loop.</li>
         <li></li>
       </ul>
     </div>
