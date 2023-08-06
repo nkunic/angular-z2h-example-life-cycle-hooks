@@ -4,10 +4,14 @@
 </button>
 <input
   type="text"
-  class="form-control"
+  class="form-control mt-2"
   id="exampleInputText"
   aria-describedby="textHelp"
   placeholder="Enter text"
   [(ngModel)]="channelName"
 />
-<app-child *ngIf="isChild" [channelName]="channelName"></app-child>
+<app-child
+  [class]="'d-flex mt-3'"
+  *ngIf="isChild"
+  [channelName]="channelName"
+></app-child>
