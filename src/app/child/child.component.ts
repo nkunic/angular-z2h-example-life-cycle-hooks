@@ -1,11 +1,11 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css'],
 })
-export class ChildComponent implements OnInit, OnDestroy, OnChanges {
+export class ChildComponent implements OnInit, OnDestroy, OnChanges, DoCheck {
   //counter = 0;
   //interval: any;
   //channelName = '';
@@ -32,5 +32,9 @@ export class ChildComponent implements OnInit, OnDestroy, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes);
     console.log('Child OnChanges is called');
+  }
+
+  ngDoCheck() {
+    console.log('Parent DoCheck is called');
   }
 }
