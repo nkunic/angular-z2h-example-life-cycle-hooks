@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -29,7 +29,8 @@ export class ChildComponent implements OnInit, OnDestroy, OnChanges {
     console.log('Child OnDestroy is called');
   }
 
-  ngOnChanges() {
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes);
     console.log('Child OnChanges is called');
   }
 }
