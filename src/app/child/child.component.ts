@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -6,9 +6,10 @@ import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./child.component.css'],
 })
 export class ChildComponent implements OnInit, OnDestroy, OnChanges {
-  counter = 0;
-  interval: any;
-  channelName = '';
+  //counter = 0;
+  //interval: any;
+  //channelName = '';
+  @Input() channelName = '';
 
   constructor() {
     console.log('Child Constructor is called');
@@ -24,7 +25,7 @@ export class ChildComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnDestroy() {
-    clearInterval(this.interval);
+    //clearInterval(this.interval);
     console.log('Child OnDestroy is called');
   }
 

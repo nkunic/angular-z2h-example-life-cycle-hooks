@@ -8,6 +8,7 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit, OnChanges {
   //isChild = false;
   isChild = true;
+  channelName = '';
 
   constructor() {
     console.log('Parent Constructor is called');

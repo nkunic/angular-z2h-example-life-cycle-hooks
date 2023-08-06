@@ -2,4 +2,12 @@
 <button type="button" (click)="toggleChild()" class="btn btn-primary">
   Toggle child
 </button>
-<app-child *ngIf="isChild"></app-child>
+<input
+  type="text"
+  class="form-control"
+  id="exampleInputText"
+  aria-describedby="textHelp"
+  placeholder="Enter text"
+  [(ngModel)]="channelName"
+/>
+<app-child *ngIf="isChild" [channelName]="channelName"></app-child>
