@@ -135,7 +135,10 @@
       <ul>
         <li>ngAfterContentInit will be called <strong>only once after the first docheck</strong>.
         </li>
-        <li></li>
+        <li>If we load the page, we can see AfterContentInit is called after Child docheck and also, we
+          cannot access this variable till the content is initialized.
+          That means, in all other hooks this is coming as undefined and only in AfterContentInit
+          this is not undefined.</li>
         <li></li>
         <li></li>
         <li></li>
